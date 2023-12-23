@@ -12,7 +12,7 @@ class S3FileForm(forms.ModelForm):
 
         # Check if the file size is within acceptable limits
         if file:
-            max_size = 5 * 1024 * 1024  # 5 MB
+            max_size = 5 * 1024 * 1024
             if file.size > max_size:
                 raise forms.ValidationError("File size must be no more than 5 MB.")
 
