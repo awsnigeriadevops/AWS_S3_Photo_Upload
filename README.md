@@ -24,12 +24,24 @@ cd AWS_S3_Photo_Upload
 pip install -r requirements.txt
 ```
 
-### 3. Add ACCESS_KEYS AND SECRET_ACCESS_KEYS in .env file
+### 4. Add environment variables in the project root directory
 
-Create a file called .env and add ACCESS_KEYS and SECRET_ACCESS_KEYS generated from AWS IAM console
+Create a file called .env and add AWS S3 required environment variables generated from AWS IAM console. See example below:
 
-### 3. Install Dependencies
+```
+AWS_ACCESS_KEY_ID=AKIAuseyourown
+AWS_SECRET_ACCESS_KEY=Pfh+useyourownUbYEuv1SjHzt2Y+at
+AWS_STORAGE_BUCKET_NAME=project1-bucuseyourownket-123456
+AWS_S3_REGION_NAME=us-east-1
+AWS_S3_CUSTOM_DOMAIN=%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+```
+
+### 5. Install Dependencies
 
 ```
 python manage.py runserver
 ```
+
+### 6. Test Application
+
+Access server at localhost:8000
