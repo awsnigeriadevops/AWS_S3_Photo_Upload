@@ -1,6 +1,6 @@
 # AWS S3 MEDIA FILES UPLOAD PROJECT
 
-This project is designed to upload media files to Amazon Simple Storage Service. Django was used to build the application that seamlessly implements this feature.
+This project is designed to upload media files to Amazon Simple Storage Service. Django was used to build the application that seamlessly implements this feature. Note that Python must be installed on the host system
 
 ## Getting Started
 
