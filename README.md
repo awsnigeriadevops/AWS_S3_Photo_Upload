@@ -1,60 +1,47 @@
-# Uploading Photos to Amazon S3 from a Browser
+# AWS S3 MEDIA FILES UPLOAD PROJECT
 
-Table of Contents
+This project is designed to upload media files to Amazon Simple Storage Service. Django was used to build the application that seamlessly implements this feature. Note that Python must be installed on the host system
 
-- [Project Overview](#overview)
-- [Features](#features)
-- [Setup](#setup-instructions)
-   - [Prerequisites](#prerequisites)
-   - [steps](#steps)
+## Getting Started
 
+Follow these steps to get your development environment set up:
 
-## Overview
+### 1. Clone the Repository
 
-This project provides a solution for uploading photos to Amazon S3 directly from a web browser.
+```bash
+git clone https://github.com/blackxavier/AWS_S3_Photo_Upload.git
+```
 
-## Features
+### 2. Change Directory
 
-- Direct Browser Uploads: Allow users to upload photos directly from their web browsers to your Amazon S3 bucket.
+```
+cd AWS_S3_Photo_Upload
+```
 
+### 3. Install Dependencies
 
-- Asynchronous Processing: Handle asynchronous processing of uploaded photos, such as triggering additional processing tasks or generating thumbnails.
+```
+pip install -r requirements.txt
+```
 
-- AWS SDK Integration: Utilize the AWS SDK for JavaScript in the browser to simplify interactions with Amazon S3.
+### 4. Add environment variables in the project root directory
 
-## Setup Instructions
+Create a file called .env and add AWS S3 required environment variables generated from AWS IAM console. See example below:
 
-### Prerequisites
+```
+AWS_ACCESS_KEY_ID=AKIAuseyourown
+AWS_SECRET_ACCESS_KEY=Pfh+useyourownUbYEuv1SjHzt2Y+at
+AWS_STORAGE_BUCKET_NAME=project1-bucuseyourownket-123456
+AWS_S3_REGION_NAME=us-east-1
+AWS_S3_CUSTOM_DOMAIN=%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+```
 
-1. AWS Account: Ensure you have an AWS account set up with the necessary permissions to create and manage S3 buckets, IAM roles, and Lambda functions.
+### 5. Install Dependencies
 
-2. AWS CLI: Install the AWS Command Line Interface (CLI) for seamless interaction with AWS services from the command line.
+```
+python manage.py runserver
+```
 
-3. AWS SDK for JavaScript: Include the AWS SDK for JavaScript.
+### 6. Test Application
 
-4. Web Browser: Ensure your web application supports HTML and JavaScript for client-side photo uploads.
-
-### Steps
-
-1. Create an S3 Bucket:
-   - Log in to the AWS Management Console.
-   - Create an S3 bucket to store the uploaded photos.
-
-2. Set Up IAM Role:
-   - Create an IAM role with the necessary permissions to allow users to upload photos to your S3 bucket.
-
-3. Generate Pre-Signed URLs:
-   - Create a server-side component (e.g., AWS Lambda function or a dedicated server) to generate pre-signed URLs for uploading photos. This ensures secure and temporary access for users.
-
-4. Integrate AWS SDK in Browser:
-   - Include the AWS SDK for JavaScript in the project.
-   - Use the SDK to request pre-signed URLs and handle the photo upload process.
-
-5. Handle Asynchronous Processing (Optional):
-   - Set up an AWS Lambda function to handle asynchronous processing of uploaded photos, such as resizing images or triggering notifications.
-
-6. Implement User Interface:
-   - Design and implement a user interface  to allow users to select and upload photos.
-
-7. Test and Debug:
-   - Test the photo upload process, ensuring that photos are correctly uploaded to the S3 bucket.
+Access server at localhost:8000
